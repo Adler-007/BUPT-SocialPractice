@@ -1,20 +1,22 @@
 <script setup>
+import { ref } from "vue";
 import Header from "@/views/Header.vue";
 
-// const login = document.querySelector(".login-button");
-// const userNameValue = document.querySelector("#userName").value;
-// const userIdValue = document.querySelector("#userId").value;
-// login.onclick = function () {
-//   if ((userNameValue != "") & (userIdValue != "")) {
-//     alert("登录成功！");
-//   } else {
-//     alert("请输入正确的账号密码");
-//   }
-// };
+const userNameValue = ref("");
+const userIdValue = ref("");
+
+function login() {
+  if (userNameValue.value == "" && userIdValue.value == "") {
+    alert("请输入正确的账号密码");
+  } else {
+    alert("登录成功！");
+  }
+}
 </script>
 
 <template>
   <div>
+    <!-- 头部 -->
     <Header />
     <div class="body">
       <div class="container">
@@ -33,8 +35,18 @@ import Header from "@/views/Header.vue";
         <div class="right-side">
           <h1>登录</h1>
           <form action="#" method="">
-            <input type="text" placeholder="用户名" id="userName" />
-            <input type="password" placeholder="密码" id="userId" />
+            <input
+              type="text"
+              placeholder="用户名"
+              id="userName"
+              v-model="userNameValue"
+            />
+            <input
+              type="password"
+              placeholder="密码"
+              id="userId"
+              v-model="userIdValue"
+            />
             <div class="checkbox-container">
               <div>
                 <input type="checkbox" id="remember-me" />
@@ -42,7 +54,12 @@ import Header from "@/views/Header.vue";
               </div>
               <a href="#" class="forgot-link">忘记?</a>
             </div>
-            <input type="submit" value="登录" class="login-button" />
+            <input
+              type="submit"
+              @click="login"
+              value="登录"
+              class="login-button"
+            />
             <hr />
             <div class="others">
               <a href=""

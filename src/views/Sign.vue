@@ -1,16 +1,23 @@
 <script setup>
 import Header from "@/views/Header.vue";
+import { ref } from "vue";
 
-// const login = document.querySelector(".login-button");
-// const newUserNameValue = document.querySelector("#newUserName").value;
-// const newUserIdValue = document.querySelector("#newUserId").value;
-// login.onclick = function () {
-//   if ((newUserNameValue == "") & (newUserIdValue == "")) {
-//     alert("账号密码不能为空");
-//   } else {
-//     alert("注册成功！");
-//   }
-// };
+const newUserNameValue = ref("");
+const newUserIdValue = ref("");
+const confirmIdValue = ref("");
+function sign() {
+  if (
+    (newUserNameValue.value == "") &
+    (newUserIdValue.value == "") &
+    (confirmIdValue.value == "")
+  ) {
+    alert("请输入正确的用户名和密码");
+  } else if (newUserIdValue.value === confirmIdValue.value) {
+    alert("注册成功！");
+  } else {
+    alert("两次输入的密码不一致，请重新输入");
+  }
+}
 </script>
 
 <template>
@@ -36,10 +43,29 @@ import Header from "@/views/Header.vue";
         <div class="right-side">
           <h1>注册</h1>
           <form action="#" method="">
-            <input type="text" placeholder="用户名" id="newUserName" />
-            <input type="password" placeholder="密码" id="newUserId" />
-            <input type="password" placeholder="确认密码" />
-            <input type="submit" value="注册" class="login-button" />
+            <input
+              type="text"
+              placeholder="用户名"
+              id="newUserName"
+              v-model="newUserNameValue"
+            />
+            <input
+              type="password"
+              placeholder="密码"
+              id="newUserId"
+              v-model="newUserIdValue"
+            />
+            <input
+              type="password"
+              placeholder="确认密码"
+              v-model="confirmIdValue"
+            />
+            <input
+              type="submit"
+              @click="sign"
+              value="注册"
+              class="login-button"
+            />
             <hr />
             <div class="others">
               <a href=""

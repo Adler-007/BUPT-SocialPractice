@@ -44,7 +44,7 @@ import Home from "@/views/Home.vue";
 
 <style scoped>
 /* 页脚部分 */
-footer {
+#footer {
   width: 100%;
   height: 220px;
   border-top: 1px solid #ddd;
@@ -112,17 +112,5 @@ footer .right .num a {
 footer .right .num a:hover {
   color: rgb(0, 0, 201);
   text-decoration: underline;
-}
-
-/* 返回顶部 */
-#toTop img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  right: 50px;
-  bottom: 80px;
-  position: fixed;
-  transform: rotateX("90deg");
-  display: inline-block;
 }
 </style>

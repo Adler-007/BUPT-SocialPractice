@@ -6,7 +6,7 @@ const userNameValue = ref("");
 const userIdValue = ref("");
 
 function login() {
-  if (userNameValue.value == "" && userIdValue.value == "") {
+  if (userNameValue.value == "" || userIdValue.value == "") {
     alert("请输入正确的账号密码");
   } else {
     alert("登录成功！");
@@ -62,17 +62,27 @@ function login() {
             />
             <hr />
             <div class="others">
-              <a href=""
-                ><img src="@/assets/images/common/phone.png" alt=""
-              /></a>
-              <a href="@/assets/images/common/WeChatQRcode.jpg">
+              <a href="">
+                <img src="@/assets/images/common/phone.png" alt="" />
+                <!-- <div class="other-item">12345678901</div> -->
+              </a>
+              <a href="">
                 <img src="@/assets/images/common/wechat.png" alt="" />
+                <div class="other-item">
+                  <!-- <img src="@/assets/images/common/WeChatQRcode.jpg" alt="" /> -->
+                </div>
               </a>
-              <a href="@/assets/images/common/qqQRcode.jpg">
+              <a href="">
                 <img src="@/assets/images/common/QQ.png" alt="" />
+                <div class="other-item">
+                  <!-- <img src="@/assets/images/common/qqQRcode.jpg" alt="" /> -->
+                </div>
               </a>
-              <a href="@/assets/images/common/moreQRcode.jpg">
+              <a href="">
                 <img src="@/assets/images/common/more.png" alt="" />
+                <div class="other-item">
+                  <!-- <img src="@/assets/images/common/moreQRcode.jpg" alt="" /> -->
+                </div>
               </a>
             </div>
             <p>没有账号？<router-link to="/Sign">注册</router-link></p>
@@ -210,5 +220,21 @@ input {
   width: 30px;
   height: 30px;
   margin: auto 5px;
+}
+
+.other-item {
+  display: none;
+}
+.other-item img {
+  /* width: 150px;
+  height: 150px; */
+  width: 100%;
+  height: 100%;
+}
+.others a:hover .other-item {
+  display: block;
+  position: absolute;
+  top: 120%;
+  left: -140%;
 }
 </style>

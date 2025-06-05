@@ -228,7 +228,7 @@ onMounted(() => {
       </div>
     </div>
     <!-- 页脚部分 -->
-    <Footer />
+    <Footer style="background-color: #fff" />
 
     <!-- 返回顶部 -->
     <div id="toTop">
@@ -308,9 +308,11 @@ onMounted(() => {
 
 /* 内容1 */
 .container .main1 {
-  margin-top: 40px;
+  padding-top: 40px;
+  padding-left: 5%;
   width: 100%;
   float: left;
+  background-color: #e6f7ff;
 }
 
 .container .main1 h2 {
@@ -339,7 +341,8 @@ onMounted(() => {
 .main2 {
   width: 100%;
   float: left;
-  background-color: #eff3ff;
+  padding-left: 10%;
+  background-color: #bccdff5f;
 }
 
 .container .main2 h2 {
@@ -402,7 +405,9 @@ onMounted(() => {
 .main3 {
   width: 100%;
   float: left;
+  padding-left: 5%;
   border-bottom: 1px solid #ddd;
+  background-color: #e6f7ff;
 }
 
 .container .main3 h2 {

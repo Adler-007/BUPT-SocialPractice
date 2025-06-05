@@ -7,9 +7,9 @@ const newUserIdValue = ref("");
 const confirmIdValue = ref("");
 function sign() {
   if (
-    (newUserNameValue.value == "") &
-    (newUserIdValue.value == "") &
-    (confirmIdValue.value == "")
+    newUserNameValue.value == "" ||
+    newUserIdValue.value == "" ||
+    confirmIdValue.value == ""
   ) {
     alert("请输入正确的用户名和密码");
   } else if (newUserIdValue.value === confirmIdValue.value) {

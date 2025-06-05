@@ -182,7 +182,7 @@ nav li .secondBar a {
 nav li .secondBar a:hover {
   background-color: #ffffff;
   color: #d2833f;
-  font-weight: lighter;
+  font-weight: bold;
   box-shadow: 0 0 3px #222;
 }
 

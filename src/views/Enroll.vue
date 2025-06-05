@@ -204,6 +204,10 @@ main .title h1 {
   border-top-right-radius: 20px;
 }
 
+.main .list {
+  background-color: #fff;
+}
+
 .main .list .left {
   margin-top: 0;
   width: 20%;
